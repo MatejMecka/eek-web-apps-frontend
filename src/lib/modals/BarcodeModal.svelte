@@ -2,7 +2,7 @@
     export let barcode_val;
 
     const barcodeDetector = new BarcodeDetector({
-        formats: ["code_39", "codabar", "ean_13"],
+        formats: ["code_39", "codabar", "ean_13", "code_128"],
     });
 
     let videoSource;
@@ -31,7 +31,7 @@
         
         for (const barcode of codes)  {
         // Log the barcode to the console
-            barcode_val = barcode
+            barcode_val = barcode.rawValue
         }
     }).catch(err => {
         // Log an error if one happens
